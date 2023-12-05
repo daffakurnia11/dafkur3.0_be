@@ -1,8 +1,8 @@
-from rest_framework import viewsets
+from rest_framework import generics
 from .models import ContactModel
 from .serializers import ContactSerializer
 
 
-class ContactViewSet(viewsets.ModelViewSet):
+class ContactViewSet(generics.CreateAPIView):
     queryset = ContactModel.objects.all()
     serializer_class = ContactSerializer
